@@ -12,6 +12,7 @@ public class 敵人的行為 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         血量文字.text = 血量.ToString();
         原血量 = 血量;
     }
