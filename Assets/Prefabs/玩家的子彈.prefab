@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 361778601233707206}
   - component: {fileID: 6964130908492269599}
   - component: {fileID: 5041716475757385556}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u73A9\u5BB6\u7684\u5B50\u5F48"
   m_TagString: "\u73A9\u5BB6\u7684\u5B50\u5F48"
   m_Icon: {fileID: 0}
@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 2201967911221536893}
   - component: {fileID: 4351005562787944579}
   - component: {fileID: 5832080516958717172}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
