@@ -20,6 +20,8 @@ public class 資源增減 : MonoBehaviour
         char firstChar = 符號[0];
         string num = 符號.Substring(1);
         int number = int.Parse(num);
+        int pawn = 0;
+        int total = 0;
         switch (firstChar.ToString())
         {
             case "+":
@@ -38,6 +40,30 @@ public class 資源增減 : MonoBehaviour
                         Destroy(gg[i]);
                     }
                 }                
+                break;
+            case "x":
+                pawn = GameObject.FindGameObjectsWithTag("小兵").Length;
+                total = 0;
+                if (pawn == 0) pawn = 1;
+                if(pawn > 0)
+                {
+                    total = (pawn * number) - pawn; // 2*20=40
+                    for (int i = 0;i < total; i++)
+                    {
+                        Instantiate(小兵, this.transform.position, Quaternion.identity);
+                    }
+                }
+                break;
+            case "/":
+                // 8 / 3 = 2...2 ..... 8-x = 2
+                GameObject[] ga = GameObject.FindGameObjectsWithTag("小兵");
+                pawn = ga.Length;
+                total = Mathf.RoundToInt(pawn / number);
+                total = ga.Length - total;
+                for (int i = 0; i < total; i++)
+                {
+                    Destroy (ga[i]);
+                }
                 break;
             default:
                 break;

@@ -10,12 +10,14 @@ public class 小兵的行為 : MonoBehaviour
 
     NavMeshAgent 導航;
     Transform 目標;
+    Vector3 方向 = Vector3.zero;  
     // Start is called before the first frame update
     void Start()
     {
         導航 = GetComponent<NavMeshAgent>();
         目標 = GameObject.FindGameObjectWithTag("Player").transform;
-        InvokeRepeating("發射子彈", 1f, 0.3f); 
+        InvokeRepeating("發射子彈", 1f, 0.3f);
+        
     }
     void 發射子彈()
     {
@@ -26,11 +28,16 @@ public class 小兵的行為 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (目標 == null) return;
         //if(導航.remainingDistance < 導航.stoppingDistance)
-            導航.SetDestination(目標.position);        
+            導航.SetDestination(目標.position);
 
-        
+        方向 = this.transform.eulerAngles;
+        方向.y = 0;
+        this.transform.eulerAngles = 方向;
+
+
     }
 }
 
