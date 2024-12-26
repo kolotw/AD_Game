@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class 控制玩家 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //InvokeRepeating("發射子彈", 1f, 0.3f);
+        InvokeRepeating("發射子彈", 1f, 0.3f);
     }
     void 發射子彈()
     {
@@ -64,10 +65,21 @@ public class 控制玩家 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        int number = 0;
+        number = collision.gameObject.GetComponent<敵人的行為>().血量;
         if(collision.transform.tag == "敵人")
         {
-            Destroy(this.gameObject);
-            print("LOST");
+            GameObject[] gg = GameObject.FindGameObjectsWithTag("小兵");
+            collision.gameObject.GetComponent<敵人的行為>().血量 = number - gg.Length;
+            if (gg != null)
+            {
+                if (number > gg.Length) number = gg.Length;
+                for (int i = 0; i < number; i++)
+                {
+                    Destroy(gg[i]);
+                }
+            }
+            
         }
     }
 }
