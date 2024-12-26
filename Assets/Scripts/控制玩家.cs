@@ -11,7 +11,7 @@ public class 控制玩家 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("發射子彈", 1f, 0.3f);
+        //InvokeRepeating("發射子彈", 1f, 0.3f);
     }
     void 發射子彈()
     {
@@ -32,9 +32,11 @@ public class 控制玩家 : MonoBehaviour
             // 使用 Raycast 檢測，確保射線擊中目標圖層
             if (Physics.Raycast(ray, out hit, Mathf.Infinity))
             {
+                if (hit.transform.tag == "Player") return;
                 // 移動 targetObject 到擊中的位置
                 Vector3 targetPosition = hit.point;
                 targetPosition.y = 0;
+                targetPosition.z = targetPosition.z + 1;
                 this.transform.position = targetPosition;
             }
         }
@@ -57,6 +59,15 @@ public class 控制玩家 : MonoBehaviour
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
         }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "敵人")
+        {
+            Destroy(this.gameObject);
+            print("LOST");
         }
     }
 }

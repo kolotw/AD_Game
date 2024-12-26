@@ -18,15 +18,16 @@ public class 敵人的行為 : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "玩家的子彈")
+        if((collision.transform.tag == "玩家的子彈") || (collision.transform.tag == "小兵"))
         {            
             Destroy(collision.gameObject);
-            血量--;
-            if(血量<=0) Destroy(this.gameObject);
-            血量文字.text = 血量.ToString();
-            float 血的比例 = (float)血量 / (float)原血量;
-            血條.transform.localScale = new Vector3(血的比例,1,1);
+            血量--;            
         }
+
+        if (血量 <= 0) Destroy(this.gameObject);
+        血量文字.text = 血量.ToString();
+        float 血的比例 = (float)血量 / (float)原血量;
+        血條.transform.localScale = new Vector3(血的比例, 1, 1);
     }
     // Update is called once per frame
     void Update()
