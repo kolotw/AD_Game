@@ -123,8 +123,7 @@ public class 資源增減 : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            處理字串();
-            
+            處理字串();           
 
             GameObject[] gg = GameObject.FindGameObjectsWithTag("資源");
             GameObject 最近 = null;
@@ -141,7 +140,6 @@ public class 資源增減 : MonoBehaviour
                     {
                         dist = Vector3.Distance(gg2.transform.position, this.transform.position);
                         最近 = gg2;
-                        print(gg2.name);
                     }                    
                 }
             }

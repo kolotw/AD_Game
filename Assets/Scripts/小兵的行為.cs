@@ -15,7 +15,7 @@ public class 小兵的行為 : MonoBehaviour
     void Start()
     {
         導航 = GetComponent<NavMeshAgent>();
-        目標 = GameObject.FindGameObjectWithTag("Player").transform;
+        目標 = GameObject.FindGameObjectWithTag("敵人").transform;
         //InvokeRepeating("發射子彈", 1f, 0.3f);
         
     }
