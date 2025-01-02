@@ -65,6 +65,7 @@ public class 控制玩家 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision.transform.tag == "障礙物") return;
         int number = 0;
         number = collision.gameObject.GetComponent<敵人的行為>().血量;
         if(collision.transform.tag == "敵人")

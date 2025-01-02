@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 4511075422166441798}
   - component: {fileID: 8438999507115840611}
   m_Layer: 0
-  m_Name: "\u8CC7\u6E90+10"
-  m_TagString: Untagged
+  m_Name: "\u8CC7\u6E90"
+  m_TagString: "\u8CC7\u6E90"
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,10 +35,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3388933538577057174}
-  - {fileID: 7100288880443042702}
   - {fileID: 5430872619447289632}
-  - {fileID: 2671355436465741167}
   - {fileID: 4231304361352945296}
+  - {fileID: 7100288880443042702}
+  - {fileID: 2671355436465741167}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7563941902954741322
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05369d4edde49e458ecc2beafe9b83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "\u8CC7\u6E90\u7B26\u865F": []
   mat: []
   "\u8CC7\u6E90\u6587\u5B57": {fileID: 6111620868603453045}
   "\u5C0F\u5175": {fileID: 7726821157414517968, guid: 76d96628617a7994b8fc67a23b3870a4,

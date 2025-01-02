@@ -1460,7 +1460,7 @@ GameObject:
   - component: {fileID: 490868933}
   - component: {fileID: 490868932}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (Legacy) Result
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2708,7 +2708,7 @@ GameObject:
   - component: {fileID: 883372855}
   - component: {fileID: 883372854}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Text (Legacy) ID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4343,6 +4343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85c73fc54ae27b941ba2fec879cde051, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  "\u7D50\u679C": {fileID: 490868932}
 --- !u!4 &1535561214
 Transform:
   m_ObjectHideFlags: 0

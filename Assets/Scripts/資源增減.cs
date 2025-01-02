@@ -124,6 +124,28 @@ public class 資源增減 : MonoBehaviour
         if(other.tag == "Player")
         {
             處理字串();
+            
+
+            GameObject[] gg = GameObject.FindGameObjectsWithTag("資源");
+            GameObject 最近 = null;
+            float dist = Mathf.Infinity;
+            foreach (GameObject gg2 in gg) 
+            {
+                if(Vector3.Distance(gg2.transform.position,this.transform.position) < dist)
+                {
+                    if (gg2.name == this.gameObject.name)
+                    {
+                        //return;
+                    }
+                    else
+                    {
+                        dist = Vector3.Distance(gg2.transform.position, this.transform.position);
+                        最近 = gg2;
+                        print(gg2.name);
+                    }                    
+                }
+            }
+            Destroy(最近);
             Destroy(this.gameObject);
         }
         else if(other.tag == "玩家的子彈")
