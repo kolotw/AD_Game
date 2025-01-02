@@ -5,6 +5,7 @@ using TMPro;
 
 public class 資源增減 : MonoBehaviour
 {
+    public GameObject[] 資源符號;
     public Material[] mat; //mat0 blue, mat1 red
     public TextMeshPro 資源文字;
     string 符號;
@@ -12,7 +13,7 @@ public class 資源增減 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-                
+        資源數增減();
     }
     void 處理字串()
     {
@@ -25,7 +26,7 @@ public class 資源增減 : MonoBehaviour
         switch (firstChar.ToString())
         {
             case "+":
-                for(int i = 0; i< number; i++)
+                for (int i = 0; i< number; i++)
                 {
                     Instantiate(小兵, this.transform.position, Quaternion.identity);
                 }                
@@ -41,7 +42,7 @@ public class 資源增減 : MonoBehaviour
                     }
                 }                
                 break;
-            case "x":
+            case "x":                
                 pawn = GameObject.FindGameObjectsWithTag("小兵").Length;
                 total = 0;
                 if (pawn == 0) pawn = 1;
@@ -79,11 +80,19 @@ public class 資源增減 : MonoBehaviour
         switch (firstChar.ToString())
         {
             case "+":
+                資源符號[0].SetActive(true);
+                資源符號[1].SetActive(false);
+                資源符號[2].SetActive(false);
+                資源符號[3].SetActive(false);
                 number++;
                 資源文字.text = "+" + number.ToString();
                 break;
-            case "-":                
-                if(firstChar.ToString() == "-") number = number * -1;
+            case "-":
+                資源符號[0].SetActive(false);
+                資源符號[1].SetActive(true);
+                資源符號[2].SetActive(false);
+                資源符號[3].SetActive(false);
+                if (firstChar.ToString() == "-") number = number * -1;
                 number++;
                 if(number >= 0)
                 {
@@ -92,6 +101,18 @@ public class 資源增減 : MonoBehaviour
                 }                    
                 else
                     資源文字.text = number.ToString();
+                break;
+            case "x":
+                資源符號[0].SetActive(false);
+                資源符號[1].SetActive(false);
+                資源符號[2].SetActive(true);
+                資源符號[3].SetActive(false);
+                break;
+            case "/":
+                資源符號[0].SetActive(false);
+                資源符號[1].SetActive(false);
+                資源符號[2].SetActive(false);
+                資源符號[3].SetActive(true);
                 break;
             default:
                 break;
