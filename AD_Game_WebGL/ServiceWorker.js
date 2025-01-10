@@ -1,9 +1,9 @@
 const cacheName = "DefaultCompany-AD_Game-0.1.0";
 const contentToCache = [
     "Build/AD_Game_WebGL.loader.js",
-    "Build/AD_Game_WebGL.framework.js.gz",
-    "Build/AD_Game_WebGL.data.gz",
-    "Build/AD_Game_WebGL.wasm.gz",
+    "Build/AD_Game_WebGL.framework.js",
+    "Build/AD_Game_WebGL.data",
+    "Build/AD_Game_WebGL.wasm",
     "TemplateData/style.css"
 
 ];
